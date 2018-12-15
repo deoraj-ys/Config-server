@@ -1,0 +1,45 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class solution {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		/*BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter Chromosome::");
+		String chrosome=br.readLine();
+		System.out.println("Enter genes::");
+		String genes=br.readLine();
+		*/
+		System.out.println("starting");
+		checkGenes("12sd78f","sf");
+
+	}
+	
+	public static boolean checkGenes(String chromosome,String genes)
+	{
+	   int counter=0;
+	   boolean flag;
+	   int loopCounter=genes.length();
+	   Map<Integer,String> map=new LinkedHashMap<Integer,String>();
+	   while(counter < loopCounter)
+	   {
+		  
+		  int index=chromosome.indexOf(genes.charAt(counter));
+		  if(index != -1)
+		  {
+			  map.put(index, new Character(genes.charAt(counter)).toString());
+		  }
+		  else { flag= false;}
+		  counter++;
+	   }
+	   System.out.println("map=="+map);
+		
+		return flag;
+	}
+
+}

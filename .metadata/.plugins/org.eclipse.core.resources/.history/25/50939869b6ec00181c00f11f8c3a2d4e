@@ -1,0 +1,52 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class solution {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		
+		/*BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("Enter Chromosome::");
+		String chrosome=br.readLine();
+		System.out.println("Enter genes::");
+		String genes=br.readLine();
+		*/
+		System.out.println("starting");
+		if(checkGenes("ijkfgds","jkf"))
+		{
+			System.out.println("YES");
+		}
+		else
+			System.out.println("NO");
+
+	}
+	
+	public static boolean checkGenes(String chromosome,String genes)
+	{
+	   int counter=0;
+	   boolean flag=false;
+	   int loopCounter=genes.length();
+	   int index=-1;
+	     
+	   while(counter < loopCounter)
+	   {
+		  
+		  index=chromosome.indexOf(genes.charAt(counter),index+1);
+		  if(index != -1)
+		  {
+			
+			  flag=true;
+		  }
+		  else { flag= false;
+		  break;}
+		  counter++;
+	   }
+	   
+	   	return flag;
+	}
+
+}
